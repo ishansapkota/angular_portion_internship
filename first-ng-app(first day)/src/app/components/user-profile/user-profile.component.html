@@ -1,0 +1,42 @@
+<h1>This is user profile component</h1>
+
+<h3>Name - {{name}}</h3>
+<h3>Age - {{age}}</h3>
+<h3>Salary - {{salary}}</h3>
+
+<button disabled="true">Normal HTML</button>
+<br>
+<br>
+<button [disabled]="btnDisabled">Property-Binding</button>
+<br>
+<br>
+<button disabled = {{btnDisabled}}>Interpolation</button><!--  this does not work raicha -->
+<br>
+<br>
+
+<h3>Name - {{name}}</h3>
+<input type = "text" (input)="onChange($event)">
+<br>
+<input type = "text" value="{{name}}" (input)="onChange($event)">
+ 
+<input type = "text" [(ngModel)]="name">
+
+<div>
+    @for(user of users;track user.name)
+    {
+       @if(user.salary > 5000)
+       {
+        <h3>Name - {{user.name}} Age- {{user.age}} Salary - {{user.salary}} Marital Status - {{user.isMarried?"Married":"Complicated"}}</h3>
+       } 
+    }
+</div>
+<hr>
+<div *ngFor = "let user of users">
+    <h3 *ngIf="user.salary>15000;else elseBlock">Name - {{user.name}} Age- {{user.age}} Salary - {{user.salary}} Marital Status - {{user.isMarried?"Married":"Complicated"}}</h3>
+    <ng-template #elseBlock>
+        <h3>Name - {{user.name}} Age- {{user.age}} Salary - {{user.salary}} Marital Status - {{user.isMarried?"Married":"Complicated"}}</h3>
+    </ng-template>
+
+
+</div>
+
