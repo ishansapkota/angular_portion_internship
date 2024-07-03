@@ -1,7 +1,14 @@
 
 
 <main class="main">
- <h1>Hello buddy </h1>
- <app-user-profile></app-user-profile>
+ <h1>Hello  </h1>
+ <app-user-profile username="Ishan" isSingle="true" salary="10000" (myEvent)="receivedData($event)"></app-user-profile>
 </main>
 
+<app-user-profile *ngFor="let u of users" 
+[username]="u.name" 
+[salary]="u.salary" 
+(myEvent)="receivedData($event)">
+</app-user-profile> 
+
+<!-- <app-user-profile username="Sudip"></app-user-profile> -->
