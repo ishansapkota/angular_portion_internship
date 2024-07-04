@@ -52,6 +52,5 @@ export class UserProfileComponent {
 sendData()
 {
   this.myEvent.emit({name:this.name,newsalary:20000})
-}
- 
+} 
 }
