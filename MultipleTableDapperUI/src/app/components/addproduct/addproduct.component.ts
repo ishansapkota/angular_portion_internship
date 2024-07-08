@@ -21,6 +21,7 @@ export class AddproductComponent {
   constructor(private service:ProductService)
   {
     this.model = {
+      id: NaN,
       name: 'Ishan',
       price : ''
     }
