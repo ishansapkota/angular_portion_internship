@@ -1,0 +1,8 @@
+.button-cell {
+    padding: 0;
+  }
+  
+  .button-cell button {
+    margin: 0;
+    padding: 0px; /* Adjust the padding as needed */
+  }

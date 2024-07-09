@@ -4,18 +4,19 @@ import { ProductService } from '../services/product.service';
 import { AddProductRequest } from '../models/product.model';
 import { AddproductComponent } from '../addproduct/addproduct.component';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import {MatFormFieldModule} from '@angular/material/form-field'
 
 @Component({
   selector: 'app-updateproduct',
   standalone: true,
-  imports: [FormsModule,RouterModule],
+  imports: [FormsModule,RouterModule,MatFormFieldModule],
   templateUrl: './updateproduct.component.html',
   styleUrl: './updateproduct.component.css'
 })
 export class UpdateproductComponent {
 
 model:AddProductRequest;
-constructor(private service:ProductService,private router:Router,private route:ActivatedRoute)
+constructor(private service:ProductService,private router:Router,private route:ActivatedRoute)//,private route:ActivatedRoute
 {
   this.model =
   {
@@ -43,6 +44,17 @@ constructor(private service:ProductService,private router:Router,private route:A
 //   });
 // }
 
+ngOnInit():void{
+  const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.service.listaProduct(Number(id)).subscribe({
+        next: (data) => {
+          this.model= data;
+        }
+      });
+    }
+}
+
 onUpdate():void
 {
   
@@ -56,4 +68,5 @@ onUpdate():void
     }
   )
 }
+
 }

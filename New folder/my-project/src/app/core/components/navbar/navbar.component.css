@@ -1,0 +1,17 @@
+.navbar {
+    display: flex;
+    flex-direction: column; /* Change the direction to column */
+    width: 200px; /* Set a fixed width for the navbar */
+    background-color: #f8f9fa; /* Background color */
+  }
+  
+  .navbar a {
+    padding: 15px; /* Space around the links */
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Text color */
+    display: block; /* Make links block elements */
+  }
+  
+  .navbar a:hover {
+    background-color: #ddd; /* Background color on hover */
+  }

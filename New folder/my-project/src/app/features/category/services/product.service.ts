@@ -35,3 +35,4 @@ export class ProductService {
     return this.http.delete<void>(`https://localhost:7259/api/Product/delete-product/${id}`);
   }
 }
+
