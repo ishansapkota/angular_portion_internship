@@ -30,7 +30,7 @@ onFormSubmit()
       {
         next:(response)=>{
           console.log("Data sent successfully");
-          this.router.navigate(['product/list'])
+          this.router.navigate(['product/list']);
         }
       }
     )

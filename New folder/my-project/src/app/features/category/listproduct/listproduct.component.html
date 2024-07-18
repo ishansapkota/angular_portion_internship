@@ -16,22 +16,22 @@
           <th>ID</th>
           <th>Name</th>
           <th>Price</th>
-          <th></th>
+
+          <th class="d-flex justify-content-end" style="margin-right: 54px;">Action</th>
+
           
         </tr>
       </thead>
-      <tbody>
+      <tbody >
         <tr *ngFor="let product of products">
           <td>{{ product.id }}</td>
           <td>{{ product.name }}</td>
           <td>{{ product.price }}</td>
-          
-            <td class="button-cell"><button mat-icon-button color="primary" [routerLink]="['update/',product.id]"><mat-icon>edit</mat-icon></button></td>
+            <td class="d-flex justify-content-end"><button class="mr-1" mat-icon-button color="primary" [routerLink]="['update/',product.id]"><mat-icon>edit</mat-icon></button>
             <!-- <td><a class="btn btn-warning" [routerLink]="['update/',product.id]">Update</a></td> -->
             <!-- <td><a class="btn btn-danger" (click)="onDelete(product.id)">Delete</a></td> -->
-            <td class="button-cell"><button mat-icon-button color="warn" (click)="onDelete(product.id)"><mat-icon>delete</mat-icon></button></td>
-            <td class="button-cell"><button mat-icon-button [routerLink]="['view/',product.id]"><mat-icon>visibility</mat-icon></button></td>
-          
+            <button class="mr-1" mat-icon-button color="warn" (click)="onDelete(product.id)"><mat-icon>delete</mat-icon></button>
+          <button class="mr-1" mat-icon-button [routerLink]="['view/',product.id]"><mat-icon>visibility</mat-icon></button></td>
           </tr>
       </tbody>
     </table>

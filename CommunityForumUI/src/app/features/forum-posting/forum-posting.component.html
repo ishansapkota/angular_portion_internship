@@ -1,0 +1,18 @@
+<div class="container border border-dark mt-5">
+    
+    <form #form="ngForm" (ngSubmit)="onPost()">
+    
+        <div class="mb-3 mt-3">
+            <label for="exampleInputPostTitle" class="form-label">Post Title</label>
+            <input type="text" class="form-control" id="exampleInputPostTitle" aria-describedby="emailHelp">
+          </div>
+    
+        <div class="mb-3 mt-3">
+          <label for="exampleInputDescription" class="form-label">Post Description</label>
+          <input type="textarea" class="form-control" id="exampleInputDescription" aria-describedby="emailHelp">
+        </div>
+    
+        <button type="submit" class="btn btn-primary mb-3" >Post</button>
+        
+      </form>
+    </div>
