@@ -3,6 +3,8 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from '../../../features/login/login.component';
 import { UserService } from '../../../features/services/user-service.service';
 import { CommonModule } from '@angular/common';
+import { LoginDTO } from '../../../features/models/LoginRegisterDTO.model';
+import { TokenDataDTO } from '../../../features/models/TokenDataDTO.model';
 
 @Component({
   selector: 'app-navbar',
@@ -12,9 +14,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  user:TokenDataDTO|null = null;
   constructor(public service:UserService)
   {
-
+      this.user = this.service.getUserInfo();
   }
 
   onLogout()

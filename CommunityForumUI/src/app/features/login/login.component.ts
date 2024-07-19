@@ -32,10 +32,17 @@ export class LoginComponent {
       {
         next:(response)=>
           {
-            this.service.setToken(response);
-            console.log("Logged in successfully.");
-            console.log(response)
+            if (response.result=="User not found" || response.result == "Incorrect Password" ||response.result ==  "No value received!")
+              {
+                console.error("Login Faield",response)
+                alert(response.result)
+                window.location.assign('/user/login');
+              }
+
+            else{
+            this.service.setToken(response.result);
             window.location.assign('/forum/posts');
+            }
           }
       }
     )
