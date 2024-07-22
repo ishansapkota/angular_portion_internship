@@ -21,16 +21,23 @@
             </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0" *ngIf="service.isAuthenticated()">
-          <li class="nav-item">
-            Hello {{user?.email}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Hello {{user?.username}}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li *ngIf="service.isUser()"><a class="dropdown-item" href="#">User Profile</a></li>
+              <li *ngIf="service.isAdmin()"><a class="dropdown-item" href="#">Admin Dashboard</a></li>
+              <li *ngIf="service.isAdmin()"><a class="dropdown-item" [routerLink]="['admin/unapproved-posts']">Unapproved Posts</a></li>
+              <li *ngIf="service.isUser()"><a class="dropdown-item" href="#">Forum Posts Posted</a></li>
+              <li *ngIf="service.isUser()"><a class="dropdown-item" href="#">Comments Made</a></li>
+            </ul>
           </li>
-      </ul>
-
-      <ul class="navbar-nav mb-2 mb-lg-0" *ngIf="service.isAuthenticated()">
-        <li class="nav-item">
-          <button class="btn btn-danger" (click)="onLogout()">LogOut</button>
-        </li>
-    </ul>
+          <li class="nav-item">
+            <button class="btn btn-danger" (click)="onLogout()">LogOut</button>
+          </li>
+        </ul>
+        
         
       </div>
     </div>

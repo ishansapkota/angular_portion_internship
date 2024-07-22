@@ -1,10 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginDTO } from '../models/LoginRegisterDTO.model';
 import { Observable } from 'rxjs/internal/Observable';
 import { jwtDecode } from 'jwt-decode';
 import { TokenDataDTO } from '../models/TokenDataDTO.model';
 import { decode } from 'punycode';
+import { PostFormatDTO } from '../models/PostFormatDTO.model';
+import { PostDTO } from '../models/PostDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +27,32 @@ export class UserService {
     return this.http.post<{result:string}>('https://localhost:7255/api/User/login',model)
   }
 
+  getPosts():Observable<PostFormatDTO[]>
+  {
+    return this.http.get<PostFormatDTO[]>('https://localhost:7255/api/Post/posts')
+  }
+
+  addPost(post: PostDTO): Observable<void> {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.post<void>(`https://localhost:7255/api/Post/post`, post, { headers });
+  }
+  
+  unapprovedPosts():Observable<PostFormatDTO[]>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<PostFormatDTO[]>('https://localhost:7255/api/Post/unapproved-posts', { headers });
+  }
+
+
+  approvePost(id:number):Observable<void>
+  {
+    
+    return this.http.get<void>(`https://localhost:7255/api/Post/approve/${id}`)
+  }
+
+
   setToken(token: string): void {
     if (typeof window !== 'undefined' && window.localStorage) {
       localStorage.setItem('jwtToken', token);
@@ -42,6 +70,28 @@ export class UserService {
     return !!this.getToken();
   }
 
+  isUser(): boolean {
+    const userInfo = this.getUserInfo();
+    if(userInfo?.role=="User")
+      {
+        return true
+      }
+    else{
+      return false
+    }
+  }
+
+  isAdmin(): boolean {
+    const userInfo = this.getUserInfo();
+    if(userInfo?.role=="Admin")
+      {
+        return true
+      }
+    else
+    {
+      return false
+    }
+  }
   getUserInfo(): TokenDataDTO | null{
     const token = this.getToken();
     if (token)

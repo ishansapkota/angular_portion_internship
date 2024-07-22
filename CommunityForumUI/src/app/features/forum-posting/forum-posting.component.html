@@ -4,15 +4,15 @@
     
         <div class="mb-3 mt-3">
             <label for="exampleInputPostTitle" class="form-label">Post Title</label>
-            <input type="text" class="form-control" id="exampleInputPostTitle" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="exampleInputPostTitle" aria-describedby="emailHelp" [(ngModel)]="post.posttitle" name="PostTitle">
           </div>
     
         <div class="mb-3 mt-3">
           <label for="exampleInputDescription" class="form-label">Post Description</label>
-          <input type="textarea" class="form-control" id="exampleInputDescription" aria-describedby="emailHelp">
+          <input type="textarea" class="form-control" id="exampleInputDescription" aria-describedby="emailHelp" [(ngModel)]="post.postdescription" name="PostDescription">
         </div>
     
-        <button type="submit" class="btn btn-primary mb-3" >Post</button>
+        <button type="submit" class="btn btn-primary mb-3" *ngIf="service.isAuthenticated()">Post</button>
         
       </form>
     </div>

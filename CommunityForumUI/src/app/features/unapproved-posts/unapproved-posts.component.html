@@ -1,0 +1,20 @@
+
+
+<div class="container justify-content-center ">
+    <div class="card text-center mb-3" *ngFor="let post of unapproved">
+      <div class="card-header">
+        {{post.username}}({{post.firstname + " " + post.lastname}})
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{post.posttitle}} {{post.id}}</h5>
+        <p class="card-text">{{post.postdescription}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        
+        <button class="btn btn-warning" type="submit" (click)="onApprove(post.id)">Approve</button>
+        <button class="btn btn-danger">Delete</button>
+      </div>
+      
+    </div>
+    
+</div>
