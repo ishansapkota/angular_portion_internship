@@ -5,11 +5,12 @@ import { UserService } from '../services/user-service.service';
 import { LoginDTO } from '../models/LoginRegisterDTO.model';
 import { Router } from 'express';
 import { Route } from '@angular/router';
+import { NavbarComponent } from "../../core/components/navbar/navbar.component";
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule, NavbarComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="avatar">
+          <img src="https://via.placeholder.com/150" alt="User Avatar">
+        </div>
+        <div class="profile-title">
+          <h1 class="name">{{user.firstname}} {{user.lastname}}</h1>
+          <p class="subtitle">Web Designer</p>
+        </div>
+      </div>
+      <div class="profile-info">
+        <div class="details">
+          <p><strong>Email:</strong> john.doe.com</p>
+          <p><strong>Phone:</strong> +1234567890</p>
+          <p><strong>Address:</strong> 123 Main St, City, Country</p>
+          <p><strong>Date of Birth:</strong> {{user.dob}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

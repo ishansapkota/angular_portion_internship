@@ -10,14 +10,14 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link " [routerLink]="['forum/posts']" role="button"  aria-expanded="false">
+            <a class="nav-link " [routerLink]="['/forum/posts']" role="button"  aria-expanded="false">
               Community Forum
             </a>
           </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0" *ngIf="!service.isAuthenticated()">
             <li class="nav-item">
-              <a class="btn btn-primary"  style="margin-left: auto;" [routerLink]="['user/login']">Login</a>
+              <a class="btn btn-primary"  style="margin-left: auto;" [routerLink]="['/user/login']">Login</a>
             </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0" *ngIf="service.isAuthenticated()">
@@ -26,10 +26,10 @@
               Hello {{user?.username}}
             </a>
             <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li *ngIf="service.isUser()"><a class="dropdown-item" href="#">User Profile</a></li>
-              <li *ngIf="service.isAdmin()"><a class="dropdown-item" href="#">Admin Dashboard</a></li>
-              <li *ngIf="service.isAdmin()"><a class="dropdown-item" [routerLink]="['admin/unapproved-posts']">Unapproved Posts</a></li>
-              <li *ngIf="service.isUser()"><a class="dropdown-item" href="#">Forum Posts Posted</a></li>
+              <li *ngIf="service.isUser()"><a class="dropdown-item" [routerLink]="['/user-profile']">User Profile</a></li>
+              <li *ngIf="service.isAdmin()"><a class="dropdown-item" [routerLink]="['/admin']">Admin Dashboard</a></li>
+              <li *ngIf="service.isAdmin()"><a class="dropdown-item" [routerLink]="['/admin/unapproved-posts']">Unapproved Posts</a></li>
+              <li *ngIf="service.isUser()"><a class="dropdown-item" [routerLink]="['/posts/my-posts']">Forum Posts Posted</a></li>
               <li *ngIf="service.isUser()"><a class="dropdown-item" href="#">Comments Made</a></li>
             </ul>
           </li>

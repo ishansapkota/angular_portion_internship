@@ -7,6 +7,7 @@ import { TokenDataDTO } from '../models/TokenDataDTO.model';
 import { decode } from 'punycode';
 import { PostFormatDTO } from '../models/PostFormatDTO.model';
 import { PostDTO } from '../models/PostDTO.model';
+import { UserInformationDTO } from '../models/UserInfoDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -48,10 +49,31 @@ export class UserService {
 
   approvePost(id:number):Observable<void>
   {
-    
-    return this.http.get<void>(`https://localhost:7255/api/Post/approve/${id}`)
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<void>(`https://localhost:7255/api/Post/approve/${id}`,{headers})
   }
 
+  deletePost(id:number):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.get<void>(`https://localhost:7255/api/Post/delete-post/${id}`,{headers})
+  }
+
+  getUserProfile():Observable<UserInformationDTO>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.get<UserInformationDTO>(`https://localhost:7255/api/User/user-detail`,{headers})
+  }
+
+  getUserPosts():Observable<PostFormatDTO[]>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.get<PostFormatDTO[]>(`https://localhost:7255/api/Post/user-post`,{headers})
+  }
 
   setToken(token: string): void {
     if (typeof window !== 'undefined' && window.localStorage) {

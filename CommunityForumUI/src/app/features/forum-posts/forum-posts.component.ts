@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Route, RouterModule } from '@angular/router';
 import { UserService } from '../services/user-service.service';
 import { CommonModule } from '@angular/common';
 import { PostFormatDTO } from '../models/PostFormatDTO.model';
+import { NavbarComponent } from "../../core/components/navbar/navbar.component";
 
 @Component({
   selector: 'app-forum-posts',
   standalone: true,
-  imports: [RouterModule,CommonModule],
+  imports: [RouterModule, CommonModule, NavbarComponent],
   templateUrl: './forum-posts.component.html',
   styleUrl: './forum-posts.component.css'
 })
@@ -23,7 +24,7 @@ export class ForumPostsComponent {
       {
         next:(data)=>{
           this.posts = data;
-          console.log(this.posts)
+          
         }
       }
     )

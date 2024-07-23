@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../services/user-service.service';
 import { PostDTO } from '../models/PostDTO.model';
+import { NavbarComponent } from "../../core/components/navbar/navbar.component";
 
 @Component({
   selector: 'app-forum-posting',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule, NavbarComponent],
   templateUrl: './forum-posting.component.html',
   styleUrl: './forum-posting.component.css'
 })
@@ -28,6 +29,7 @@ onPost()
     next: (response)=>
       {
         console.log(response);
+        window.location.assign('forum/posts');
       },
       error: (response)=>
         {

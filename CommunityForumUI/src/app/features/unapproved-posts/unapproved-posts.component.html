@@ -1,4 +1,4 @@
-
+<app-admin-dashboard></app-admin-dashboard>
 
 <div class="container justify-content-center ">
     <div class="card text-center mb-3" *ngFor="let post of unapproved">
@@ -12,9 +12,7 @@
       <div class="card-footer text-muted">
         
         <button class="btn btn-warning" type="submit" (click)="onApprove(post.id)">Approve</button>
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger" type="submit" (click)="onDelete(post.id)">Delete</button>
       </div>
-      
     </div>
-    
 </div>

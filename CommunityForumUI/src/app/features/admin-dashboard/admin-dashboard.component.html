@@ -1,0 +1,24 @@
+<!-- <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="['admin/unapproved-posts']" routerLinkActive="active">Unapproved Posts</a>
+        <a mat-list-item href="#">Hello</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container> -->
+
+
+
+  <div class="sidenav">
+    <h1>Admin Dashboard</h1>
+    <a href="#user-list">User List</a>
+    <a [routerLink]="['/admin/unapproved-posts']">Unapproved Posts</a>
+    <a [routerLink]="['']">Back To Home</a>
+    <a (click)="logout()">Log-Out</a>
+   
+  </div>
+
+  
