@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="home-container">
+    <div class="misc-info">
+      <p></p>
+    </div>
+    <div class="news-section border border-dark">
+      
+    </div>
+ 
+    <div class="forum-section border border-dark">
+            <h1>Community Forum</h1>
+      <div class="posts" *ngFor="let post of posts">
+      <p >{{post.posttitle}}</p>
+    </div>
+    </div>
+  </div>

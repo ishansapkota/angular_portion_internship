@@ -13,8 +13,8 @@
 
 
   <div class="sidenav">
-    <h1>Admin Dashboard</h1>
-    <a href="#user-list">User List</a>
+    <h1 [routerLink]="['/admin']">Admin Dashboard</h1>
+    <a [routerLink]="['/admin/user-lists']">User List</a>
     <a [routerLink]="['/admin/unapproved-posts']">Unapproved Posts</a>
     <a [routerLink]="['']">Back To Home</a>
     <a (click)="logout()">Log-Out</a>

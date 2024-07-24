@@ -1,12 +1,12 @@
 <app-admin-dashboard></app-admin-dashboard>
 
-<div class="container justify-content-center ">
-    <div class="card text-center mb-3" *ngFor="let post of unapproved">
+<div class="container justify-content-center mt-3 w-50 ">
+    <div class="card text-center mb-3 border border-dark" *ngFor="let post of unapproved">
       <div class="card-header">
-        {{post.username}}({{post.firstname + " " + post.lastname}})
+        {{post.posttitle}}
       </div>
       <div class="card-body">
-        <h5 class="card-title">{{post.posttitle}} {{post.id}}</h5>
+        <h5 class="card-title"></h5>
         <p class="card-text">{{post.postdescription}}</p>
       </div>
       <div class="card-footer text-muted">

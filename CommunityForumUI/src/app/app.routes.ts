@@ -9,6 +9,9 @@ import { UserPostsComponent } from './features/user-posts/user-posts.component';
 import { AdminDashboardComponent } from './features/admin-dashboard/admin-dashboard.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { AdminDashboardHomeComponent } from './features/admin-dashboard-home/admin-dashboard-home.component';
+import { HomepageComponent } from './features/homepage/homepage.component';
+import { EditUserProfileComponent } from './features/edit-user-profile/edit-user-profile.component';
+import { UserListsAdminComponent } from './features/user-lists-admin/user-lists-admin.component';
 
 export const routes: Routes = [
     {
@@ -45,6 +48,16 @@ export const routes: Routes = [
     },
     {
         path:'',
-        component:NavbarComponent
+        component:HomepageComponent
+    },
+    {
+        path:'edit',
+        component:EditUserProfileComponent
+    },
+    {
+        path:'admin/user-lists',
+        component:UserListsAdminComponent
     }
+
+
 ];

@@ -1,0 +1,15 @@
+.home-container {
+    display: flex;
+  }
+  .misc-info {
+    flex: 1;
+    padding: 10px;
+  }
+  .news-section {
+    flex: 2;
+    padding: 10px;
+  }
+  .forum-section {
+    flex: 1;
+    padding: 10px;
+  }

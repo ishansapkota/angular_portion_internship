@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg border border-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Community Forum</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Hello {{user?.username}}
             </a>
-            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarDarkDropdownMenuLink">
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li *ngIf="service.isUser()"><a class="dropdown-item" [routerLink]="['/user-profile']">User Profile</a></li>
               <li *ngIf="service.isAdmin()"><a class="dropdown-item" [routerLink]="['/admin']">Admin Dashboard</a></li>
               <li *ngIf="service.isAdmin()"><a class="dropdown-item" [routerLink]="['/admin/unapproved-posts']">Unapproved Posts</a></li>

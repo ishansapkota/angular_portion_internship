@@ -75,6 +75,12 @@ export class UserService {
     return this.http.get<PostFormatDTO[]>(`https://localhost:7255/api/Post/user-post`,{headers})
   }
 
+  updateUser(model:UserInformationDTO):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.put<void>(`https://localhost:7255/api/User`,model,{headers})
+  }
   setToken(token: string): void {
     if (typeof window !== 'undefined' && window.localStorage) {
       localStorage.setItem('jwtToken', token);

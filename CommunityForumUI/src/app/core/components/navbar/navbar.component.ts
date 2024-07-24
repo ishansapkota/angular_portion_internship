@@ -25,6 +25,7 @@ export class NavbarComponent {
   {
     this.service.logoutUser();
     console.log("User successfully logged out.")
+    window.location.assign('')
   }
 
 }

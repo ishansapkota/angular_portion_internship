@@ -3,11 +3,12 @@ import { UserInformationDTO } from '../models/UserInfoDTO.model';
 import { UserService } from '../services/user-service.service';
 import { response } from 'express';
 import { NavbarComponent } from "../../core/components/navbar/navbar.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent,RouterModule],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
@@ -19,7 +20,8 @@ constructor(public service:UserService)
     firstname:'',
     lastname:'',
     address:'',
-    dob:''
+    dob:'',
+    email:''
   }
 }
 

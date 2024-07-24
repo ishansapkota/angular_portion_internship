@@ -7,14 +7,14 @@
             <i class="fas fa-users card-icon"></i>
             <h3>User List</h3>
             <p>Manage the list of users, view details, and perform actions.</p>
-            <a href="#user-list" class="card-button">Go to User List</a>
+            <a [routerLink]="['/admin/user-lists']" class="card-button">Go to User List</a>
           </div>
     
           <div class="card">
             <i class="fas fa-tasks card-icon"></i>
             <h3>Unapproved Posts</h3>
             <p>Review and approve or delete unapproved posts submitted by users.</p>
-            <a href="#unapproved-posts" class="card-button">Go to Unapproved Posts</a>
+            <a [routerLink]="['/admin/unapproved-posts']" class="card-button">Go to Unapproved Posts</a>
           </div>
 
           <div class="card">
