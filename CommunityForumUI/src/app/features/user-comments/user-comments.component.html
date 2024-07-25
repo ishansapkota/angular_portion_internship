@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div class="container justify-content-center w-50 mt-3">
+    <div class="card text-center mb-3" *ngFor="let comment of comments">
+      <div class="card-header">
+        {{comment.postTitle}} {{comment.postId}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">{{comment.commentMessage}}</p>
+      </div>
+      <div class="card-footer text-muted">
+        {{comment.firstName + " " + comment.lastName}}
+      </div>
+    </div>
+  </div>

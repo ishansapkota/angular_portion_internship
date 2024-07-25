@@ -12,6 +12,8 @@ import { AdminDashboardHomeComponent } from './features/admin-dashboard-home/adm
 import { HomepageComponent } from './features/homepage/homepage.component';
 import { EditUserProfileComponent } from './features/edit-user-profile/edit-user-profile.component';
 import { UserListsAdminComponent } from './features/user-lists-admin/user-lists-admin.component';
+import { UserCommentsComponent } from './features/user-comments/user-comments.component';
+import { ForumPostWithCommentsComponent } from './features/forum-post-with-comments/forum-post-with-comments.component';
 
 export const routes: Routes = [
     {
@@ -57,6 +59,14 @@ export const routes: Routes = [
     {
         path:'admin/user-lists',
         component:UserListsAdminComponent
+    },
+    {
+        path:'my-comments',
+        component:UserCommentsComponent
+    },
+    {
+        path:'post/:id',
+        component:ForumPostWithCommentsComponent
     }
 
 

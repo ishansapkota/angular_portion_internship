@@ -8,6 +8,9 @@ import { decode } from 'punycode';
 import { PostFormatDTO } from '../models/PostFormatDTO.model';
 import { PostDTO } from '../models/PostDTO.model';
 import { UserInformationDTO } from '../models/UserInfoDTO.model';
+import { CommentWithUserandPostDTO } from '../models/CommentWithUserandPostDTO.model';
+import { CommentWithUserDTO } from '../models/CommentWithUserDTO.model';
+import { CommentDTO } from '../models/CommentDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -75,12 +78,35 @@ export class UserService {
     return this.http.get<PostFormatDTO[]>(`https://localhost:7255/api/Post/user-post`,{headers})
   }
 
+  getUserComments():Observable<CommentWithUserandPostDTO[]>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.get<CommentWithUserandPostDTO[]>(`https://localhost:7255/api/Comment/comments-by-user`,{headers})
+  }
+
   updateUser(model:UserInformationDTO):Observable<void>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
     return this.http.put<void>(`https://localhost:7255/api/User`,model,{headers})
   }
+
+  getPost(id:number):Observable<PostFormatDTO>
+  {
+    return this.http.get<PostFormatDTO>(`https://localhost:7255/api/Post/post/${id}`)
+  }
+
+  getCommentsbyPost(id:number):Observable<CommentWithUserDTO[]>
+  {
+    return this.http.get<CommentWithUserDTO[]>(`https://localhost:7255/api/Comment/comments-by-post/${id}`)
+  }
+
+  addComment(commentMessage:CommentDTO,id:number):Observable<void>
+  {
+    return this.http.post<void>(`https://localhost:7255/api/Comment/${id}`,commentMessage)
+  }
+
   setToken(token: string): void {
     if (typeof window !== 'undefined' && window.localStorage) {
       localStorage.setItem('jwtToken', token);
