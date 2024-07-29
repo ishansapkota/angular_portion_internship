@@ -3,8 +3,6 @@ import { NavbarComponent } from "../../core/components/navbar/navbar.component";
 import { PostFormatDTO } from '../models/PostFormatDTO.model';
 import { UserService } from '../services/user-service.service';
 import { ActivatedRoute } from '@angular/router';
-import { response } from 'express';
-import { CommentWithUserandPostDTO } from '../models/CommentWithUserandPostDTO.model';
 import { CommentWithUserDTO } from '../models/CommentWithUserDTO.model';
 import { CommonModule } from '@angular/common';
 import { CommentDTO } from '../models/CommentDTO.model';
@@ -21,9 +19,13 @@ export class ForumPostWithCommentsComponent {
 
   post : PostFormatDTO
   comments: CommentWithUserDTO[]=[]
-  commentMessage:CommentDTO
+  commentmessage:CommentDTO 
   constructor(public service:UserService,private route:ActivatedRoute)
   {
+    this.commentmessage =
+    {
+      commentMessage:''
+    }
   }
 
   ngOnInit()
@@ -56,11 +58,12 @@ export class ForumPostWithCommentsComponent {
   onComment()
   {
     let id = this.route.snapshot.paramMap.get('id')
-    this.service.addComment(this.commentMessage,parseInt(id)).subscribe(
+    this.service.addComment(this.commentmessage,parseInt(id)).subscribe(
       {
         next:(response)=>
           {
             console.log("added comment")
+            window.location.assign(`post/${id}`)
           }
       }
     )

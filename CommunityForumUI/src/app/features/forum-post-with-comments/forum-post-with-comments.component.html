@@ -1,23 +1,23 @@
 <app-navbar></app-navbar>
 
 <div class="container justify-content-center w-75 mt-3">
-    <div class="card text-center mb-3" >
-      <div class="card-header">
-        {{post.posttitle}}
+    <div class="card  mb-3" >
+      <div class="card-header text-center">
+        {{post?.posttitle}}
       </div>
-      <div class="card-body">
+      <div class="card-body text-center">
         <h5 class="card-title"></h5>
-        <p class="card-text">{{post.postdescription}}</p>
+        <p class="card-text">{{post?.postdescription}}</p>
       </div>
-      <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+      <div class="card-footer text-muted  d-flex justify-content-between align-items-center">
         <div>
-          {{post.firstname}} {{post.lastname}}
+          {{post?.firstname}} {{post?.lastname}}
         </div>
       </div>
     </div>
 </div>
 
-<form #form="ngForm">
+<!-- <form #form="ngForm">
 <div class="container justify-content-center w-50 mt-3" *ngIf="service.isAuthenticated()">
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Add Comment</label>
@@ -26,15 +26,30 @@
         <button type="submit" class="btn btn-primary" (click)="onComment()">Comment</button>
       </div>
 </div>
-</form>
-<div class="container justify-content-center w-50 mt-3" *ngFor="let comment of comments">
-    <div class="card text-center mb-3" >
-      <div class="card-header">
-        {{comment.firstName}} {{comment.lastName}}
+</form> -->
+
+<div class="container mt-5 w-50" *ngIf="service.isUser()">
+  <form #form="ngForm" (ngSubmit)="onComment()">
+    
+    <div class="mb-3 mt-3">
+        <label for="exampleInputPostTitle" class="form-label">Comment</label>
+        <input type="text" class="form-control" id="exampleInputCommentMessage" aria-describedby="commentMessage" [(ngModel)]="commentmessage.commentMessage" name="PostTitle">
       </div>
-      <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text">{{comment.commentMessage}}</p>
-      </div>
-    </div>
+
+      <button type="submit"class="btn btn-primary"> Comment</button>
+  </form>
 </div>
+
+<div class="container justify-content-center w-50 mt-3" *ngFor="let comment of comments">
+  <div class="card text-center mb-3" >
+    <div class="card-header">
+      {{comment?.firstName}} {{comment?.lastName}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <p class="card-text">{{comment?.commentMessage}}</p>
+    </div>
+  </div>
+</div>
+
+

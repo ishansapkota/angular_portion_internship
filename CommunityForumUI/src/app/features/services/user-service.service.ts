@@ -23,30 +23,30 @@ export class UserService {
   
   registerUsers(model:LoginDTO) : Observable<void>
   {
-    return this.http.post<void>('https://localhost:7255/api/User/register-user',model);
+    return this.http.post<void>('http://localhost:5291/api/User/register-user',model);
   }
 
   loginUser(model:LoginDTO) : Observable<{result: string}>
   {
-    return this.http.post<{result:string}>('https://localhost:7255/api/User/login',model)
+    return this.http.post<{result:string}>('http://localhost:5291/api/User/login',model)
   }
 
   getPosts():Observable<PostFormatDTO[]>
   {
-    return this.http.get<PostFormatDTO[]>('https://localhost:7255/api/Post/posts')
+    return this.http.get<PostFormatDTO[]>('http://localhost:5291/api/Post/posts')
   }
 
   addPost(post: PostDTO): Observable<void> {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.post<void>(`https://localhost:7255/api/Post/post`, post, { headers });
+    return this.http.post<void>(`http://localhost:5291/api/Post/post`, post, { headers });
   }
   
   unapprovedPosts():Observable<PostFormatDTO[]>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<PostFormatDTO[]>('https://localhost:7255/api/Post/unapproved-posts', { headers });
+    return this.http.get<PostFormatDTO[]>('http://localhost:5291/api/Post/unapproved-posts', { headers });
   }
 
 
@@ -54,57 +54,59 @@ export class UserService {
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<void>(`https://localhost:7255/api/Post/approve/${id}`,{headers})
+    return this.http.get<void>(`http://localhost:5291/api/Post/approve/${id}`,{headers})
   }
 
   deletePost(id:number):Observable<void>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
-    return this.http.get<void>(`https://localhost:7255/api/Post/delete-post/${id}`,{headers})
+    return this.http.get<void>(`http://localhost:5291/api/Post/delete-post/${id}`,{headers})
   }
 
   getUserProfile():Observable<UserInformationDTO>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
-    return this.http.get<UserInformationDTO>(`https://localhost:7255/api/User/user-detail`,{headers})
+    return this.http.get<UserInformationDTO>(`http://localhost:5291/api/User/user-detail`,{headers})
   }
 
   getUserPosts():Observable<PostFormatDTO[]>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
-    return this.http.get<PostFormatDTO[]>(`https://localhost:7255/api/Post/user-post`,{headers})
+    return this.http.get<PostFormatDTO[]>(`http://localhost:5291/api/Post/user-post`,{headers})
   }
 
   getUserComments():Observable<CommentWithUserandPostDTO[]>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
-    return this.http.get<CommentWithUserandPostDTO[]>(`https://localhost:7255/api/Comment/comments-by-user`,{headers})
+    return this.http.get<CommentWithUserandPostDTO[]>(`http://localhost:5291/api/Comment/comments-by-user`,{headers})
   }
 
   updateUser(model:UserInformationDTO):Observable<void>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
-    return this.http.put<void>(`https://localhost:7255/api/User`,model,{headers})
+    return this.http.put<void>(`http://localhost:5291/api/User`,model,{headers})
   }
 
   getPost(id:number):Observable<PostFormatDTO>
   {
-    return this.http.get<PostFormatDTO>(`https://localhost:7255/api/Post/post/${id}`)
+    return this.http.get<PostFormatDTO>(`http://localhost:5291/api/Post/post/${id}`)
   }
 
   getCommentsbyPost(id:number):Observable<CommentWithUserDTO[]>
   {
-    return this.http.get<CommentWithUserDTO[]>(`https://localhost:7255/api/Comment/comments-by-post/${id}`)
+    return this.http.get<CommentWithUserDTO[]>(`http://localhost:5291/api/Comment/comments-by-post/${id}`)
   }
 
   addComment(commentMessage:CommentDTO,id:number):Observable<void>
   {
-    return this.http.post<void>(`https://localhost:7255/api/Comment/${id}`,commentMessage)
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.post<void>(`http://localhost:5291/api/Comment/${id}`,commentMessage,{headers})
   }
 
   setToken(token: string): void {

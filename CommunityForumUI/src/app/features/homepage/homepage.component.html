@@ -11,7 +11,7 @@
     <div class="forum-section border border-dark">
             <h1>Community Forum</h1>
       <div class="posts" *ngFor="let post of posts">
-      <p >{{post.posttitle}}</p>
+      <a (click)="toPost(post.id)">{{post.posttitle}}</a>
     </div>
     </div>
   </div>

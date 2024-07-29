@@ -3,11 +3,12 @@ import { NavbarComponent } from '../../core/components/navbar/navbar.component';
 import { PostFormatDTO } from '../models/PostFormatDTO.model';
 import { UserService } from '../services/user-service.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [NavbarComponent,CommonModule],
+  imports: [NavbarComponent,CommonModule,RouterModule],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })
@@ -29,6 +30,11 @@ export class HomepageComponent {
           }
       }
     )
+  }
+
+  toPost(id:number)
+  {
+    window.location.assign(`/post/${id}`)
   }
 
 }
