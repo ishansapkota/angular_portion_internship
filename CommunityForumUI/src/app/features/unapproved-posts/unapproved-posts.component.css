@@ -1,0 +1,12 @@
+.btn.btn-warning:hover{
+    transform: scale(1.06);
+}
+
+.btn.btn-danger:hover{
+    transform: scale(1.06);
+}
+
+.card-body
+{
+    background-color: #c0cfa5;
+}

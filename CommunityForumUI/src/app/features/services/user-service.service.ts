@@ -11,6 +11,7 @@ import { UserInformationDTO } from '../models/UserInfoDTO.model';
 import { CommentWithUserandPostDTO } from '../models/CommentWithUserandPostDTO.model';
 import { CommentWithUserDTO } from '../models/CommentWithUserDTO.model';
 import { CommentDTO } from '../models/CommentDTO.model';
+import { NewsDTO } from '../models/NewsDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -71,6 +72,7 @@ export class UserService {
     return this.http.get<UserInformationDTO>(`http://localhost:5291/api/User/user-detail`,{headers})
   }
 
+
   getUserPosts():Observable<PostFormatDTO[]>
   {
     const token = this.getToken();
@@ -83,6 +85,13 @@ export class UserService {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
     return this.http.get<CommentWithUserandPostDTO[]>(`http://localhost:5291/api/Comment/comments-by-user`,{headers})
+  }
+
+  getAllUsers():Observable<UserInformationDTO[]>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.get<UserInformationDTO[]>(`http://localhost:5291/api/User`,{headers})
   }
 
   updateUser(model:UserInformationDTO):Observable<void>
@@ -107,6 +116,18 @@ export class UserService {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
     return this.http.post<void>(`http://localhost:5291/api/Comment/${id}`,commentMessage,{headers})
+  }
+
+  addNews(news:NewsDTO):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.post<void>(`http://localhost:5291/api/News`,news,{headers})
+  }
+
+  getAllNews():Observable<NewsDTO[]>
+  {
+    return this.http.get<NewsDTO[]>(`http://localhost:5291/api/News`)
   }
 
   setToken(token: string): void {

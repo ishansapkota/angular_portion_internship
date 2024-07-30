@@ -1,0 +1,7 @@
+.comment-button:hover{
+    transform: scale(1.12);
+}
+
+.card:hover{
+    transform: scale(1.02);
+}

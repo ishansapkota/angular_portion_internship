@@ -4,6 +4,7 @@ import { PostFormatDTO } from '../models/PostFormatDTO.model';
 import { UserService } from '../services/user-service.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NewsDTO } from '../models/NewsDTO.model';
 
 @Component({
   selector: 'app-homepage',
@@ -13,8 +14,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './homepage.component.css'
 })
 export class HomepageComponent {
-
   posts:PostFormatDTO[] = []
+  news:NewsDTO[] = []
   constructor(public service:UserService)
   {
 
@@ -26,7 +27,17 @@ export class HomepageComponent {
         next:(response)=>
           {
               this.posts = response
-              console.log("here")
+              
+          }
+      }
+    )
+
+    this.service.getAllNews().subscribe(
+      {
+        next:(newsreponse)=>
+          {
+            this.news = newsreponse
+            console.log("news")
           }
       }
     )

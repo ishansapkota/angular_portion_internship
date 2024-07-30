@@ -14,6 +14,7 @@ import { EditUserProfileComponent } from './features/edit-user-profile/edit-user
 import { UserListsAdminComponent } from './features/user-lists-admin/user-lists-admin.component';
 import { UserCommentsComponent } from './features/user-comments/user-comments.component';
 import { ForumPostWithCommentsComponent } from './features/forum-post-with-comments/forum-post-with-comments.component';
+import { AddNewsComponent } from './features/add-news/add-news.component';
 
 export const routes: Routes = [
     {
@@ -67,6 +68,10 @@ export const routes: Routes = [
     {
         path:'post/:id',
         component:ForumPostWithCommentsComponent
+    },
+    {
+        path:'admin/add-news',
+        component:AddNewsComponent
     }
 
 

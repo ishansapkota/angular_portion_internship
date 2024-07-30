@@ -28,7 +28,6 @@
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li *ngIf="service.isUser()"><a class="dropdown-item" [routerLink]="['/user-profile']">User Profile</a></li>
               <li *ngIf="service.isAdmin()"><a class="dropdown-item" [routerLink]="['/admin']">Admin Dashboard</a></li>
-              <li *ngIf="service.isAdmin()"><a class="dropdown-item" [routerLink]="['/admin/unapproved-posts']">Unapproved Posts</a></li>
               <li *ngIf="service.isUser()"><a class="dropdown-item" [routerLink]="['/posts/my-posts']">Forum Posts Posted</a></li>
               <li *ngIf="service.isUser()"><a class="dropdown-item" [routerLink]="['/my-comments']">Comments Made</a></li>
             </ul>

@@ -1,0 +1,13 @@
+.card-container
+{
+    margin-left: 220px;
+    background-color:  #d5def5;
+}
+
+.card{
+    background-color:  #d5def5;
+}
+
+.form-control{
+    background-color: rgb(241, 232, 232);
+}

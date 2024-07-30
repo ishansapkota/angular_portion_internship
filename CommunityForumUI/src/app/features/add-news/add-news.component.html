@@ -1,0 +1,24 @@
+<app-admin-dashboard></app-admin-dashboard>
+
+
+<div class="card-container mt-5">
+    <div class="card">
+        <h3>Add News</h3>
+        <form #form="ngForm" (ngSubmit)="onPost()">
+    
+            <div class="mb-3 mt-3">
+                <label for="exampleInputPostTitle" class="form-label">News Title</label>
+                <input type="text" class="form-control" id="exampleInputPostTitle" [(ngModel)]="news.newstitle"  name="NewsTitle">
+              </div>
+        
+            <div class="mb-3 mt-3">
+              <label for="exampleInputDescription" class="form-label">News Description</label>
+              <input type="textarea" class="form-control" id="exampleInputDescription" [(ngModel)]="news.newsdescription" name="NewsDescription">
+            </div>
+        
+            <button type="submit" class="btn btn-primary mb-3">Post</button>
+            
+          </form>
+        <!-- <a [routerLink]="['/admin/user-lists']" class="card-button">Go to User List</a> -->
+      </div>
+</div>

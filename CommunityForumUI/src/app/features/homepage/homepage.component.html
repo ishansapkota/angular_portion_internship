@@ -4,14 +4,27 @@
     <div class="misc-info">
       <p></p>
     </div>
-    <div class="news-section border border-dark">
+    <div class="news-section">
+      <!-- <img src="../../../assets/photo.jpg" style="width: 50%;"> -->
+      <img src="assets/photo.jpg" alt="News Image" class="news-image"/>
+  <div class="news-articles">
+    <div class="news-article" *ngFor="let article of news">
+      <h3 class="news-title">{{ article.newstitle }}</h3>
       
     </div>
+
+    </div>
+    </div>
  
-    <div class="forum-section border border-dark">
-            <h1>Community Forum</h1>
+    <!-- <div class="forum-section border border-dark">
+            <h1 class="community-forum" [routerLink]="['/forum/posts']">Community Forum</h1>
       <div class="posts" *ngFor="let post of posts">
       <a (click)="toPost(post.id)">{{post.posttitle}}</a>
+    </div> -->
+    <div class="community-forum ">
+      <h1 class="community-forum-header" [routerLink]="['/forum/posts']">Community Forum</h1>
+      <div class="post-container" *ngFor="let post of posts" (click)="toPost(post.id)">
+        <a class="post-title"  style="text-decoration: none;color:black">{{ post.posttitle}}</a>
     </div>
     </div>
   </div>
