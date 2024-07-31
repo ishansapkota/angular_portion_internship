@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../services/user-service.service';
 import { NewsDTO } from '../models/NewsDTO.model';
+import { AddNewsDTO } from '../models/AddNewsDTO.model';
 
 @Component({
   selector: 'app-add-news',
@@ -14,11 +15,10 @@ import { NewsDTO } from '../models/NewsDTO.model';
 })
 export class AddNewsComponent {
 
-  news:NewsDTO
+  news:AddNewsDTO
   constructor(private service:UserService)
   {
     this.news={
-      id:NaN,
       newstitle:'',
       newsdescription:''
     }

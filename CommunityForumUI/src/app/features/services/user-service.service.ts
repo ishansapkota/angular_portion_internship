@@ -12,6 +12,8 @@ import { CommentWithUserandPostDTO } from '../models/CommentWithUserandPostDTO.m
 import { CommentWithUserDTO } from '../models/CommentWithUserDTO.model';
 import { CommentDTO } from '../models/CommentDTO.model';
 import { NewsDTO } from '../models/NewsDTO.model';
+import { AddNewsDTO } from '../models/AddNewsDTO.model';
+import { TeamsDTO } from '../models/AddTeamsDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -118,7 +120,21 @@ export class UserService {
     return this.http.post<void>(`http://localhost:5291/api/Comment/${id}`,commentMessage,{headers})
   }
 
-  addNews(news:NewsDTO):Observable<void>
+  deletePostByUser(id:number):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.get<void>(`http://localhost:5291/api/Post/post-delete/${id}`,{headers})
+  }
+
+  deleteCommentByUser(id:number):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.get<void>(`http://localhost:5291/api/Comment/comments-delete/${id}`,{headers})
+  }
+
+  addNews(news:AddNewsDTO):Observable<void>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
@@ -128,6 +144,21 @@ export class UserService {
   getAllNews():Observable<NewsDTO[]>
   {
     return this.http.get<NewsDTO[]>(`http://localhost:5291/api/News`)
+  }
+
+  
+  deleteNews(id:number):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.delete<void>(`http://localhost:5291/api/News/delete-news/${id}`,{headers})
+  }
+
+  addTeams(team:TeamsDTO):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.post<void>(`http://localhost:5291/api/Table/add-teams`,team,{headers})
   }
 
   setToken(token: string): void {

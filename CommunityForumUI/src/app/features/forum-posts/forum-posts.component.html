@@ -20,7 +20,7 @@
     </div>
     <div class="card-footer text-muted d-flex justify-content-between align-items-center">
       <div>
-        {{post.firstname}} {{post.lastname}}
+        <a [routerLink]="['/user-profile']">{{post.firstname}} {{post.lastname}}</a>
       </div>
       <div class="comment-button">
         <a (click)="toComment(post.id)"><mat-icon >comment</mat-icon></a>

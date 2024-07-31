@@ -5,11 +5,12 @@ import { UserService } from '../services/user-service.service';
 import { Router } from 'express';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NavbarComponent } from "../../core/components/navbar/navbar.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-edit-user-profile',
   standalone: true,
-  imports: [FormsModule, NavbarComponent,RouterModule],
+  imports: [FormsModule, NavbarComponent,RouterModule,CommonModule],
   templateUrl: './edit-user-profile.component.html',
   styleUrl: './edit-user-profile.component.css'
 })
@@ -17,7 +18,7 @@ export class EditUserProfileComponent {
 
   user:UserInformationDTO
 
-  constructor(private service:UserService,private route:ActivatedRoute)
+  constructor(public service:UserService,private route:ActivatedRoute)
   {
     this.user={
       firstname:'',

@@ -15,6 +15,9 @@ import { UserListsAdminComponent } from './features/user-lists-admin/user-lists-
 import { UserCommentsComponent } from './features/user-comments/user-comments.component';
 import { ForumPostWithCommentsComponent } from './features/forum-post-with-comments/forum-post-with-comments.component';
 import { AddNewsComponent } from './features/add-news/add-news.component';
+import { ListDeleteNewsComponent } from './features/list-delete-news/list-delete-news.component';
+import { AddTeamsComponent } from './features/add-teams/add-teams.component';
+import { ListUpdateTeamsComponent } from './features/list-update-teams/list-update-teams.component';
 
 export const routes: Routes = [
     {
@@ -72,6 +75,18 @@ export const routes: Routes = [
     {
         path:'admin/add-news',
         component:AddNewsComponent
+    },
+    {
+        path:'admin/list-delete-news',
+        component:ListDeleteNewsComponent
+    },
+    {
+        path: 'admin/add-teams',
+        component:AddTeamsComponent
+    },
+    {
+        path:'admin/list-teams',
+        component:ListUpdateTeamsComponent
     }
 
 

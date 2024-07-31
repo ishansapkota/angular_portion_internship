@@ -32,3 +32,8 @@
 .custom-table thead th {
     border-bottom: 2px solid #aaa;
 }
+
+div{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    
+}

@@ -9,8 +9,11 @@
         <h5 class="card-title"></h5>
         <p class="card-text">{{comment.commentMessage}}</p>
       </div>
-      <div class="card-footer text-muted">
+      <div class="card-footer text-muted d-flex justify-content-between align-items-center">
         {{comment.firstName + " " + comment.lastName}}
+        <div class="delete-button">
+            <a (click)="onDelete(comment.commentId)"><mat-icon>delete</mat-icon></a>
+        </div>
       </div>
     </div>
   </div>

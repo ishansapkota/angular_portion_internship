@@ -1,0 +1,15 @@
+<app-admin-dashboard></app-admin-dashboard>
+
+<div class="news-section">
+   
+      
+  <div class="news-articles">
+    <div class="news-article text-muted d-flex justify-content-between align-items-center" *ngFor="let article of news">
+      <h3 class="news-title">{{ article.newstitle }}</h3>
+      
+      <div class="delete-button">
+        <a (click)="onDelete(article.id)"><mat-icon>delete</mat-icon></a>
+      </div>
+    </div>
+  </div>
+</div>
