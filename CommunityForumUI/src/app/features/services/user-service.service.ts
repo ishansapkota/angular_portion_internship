@@ -13,7 +13,8 @@ import { CommentWithUserDTO } from '../models/CommentWithUserDTO.model';
 import { CommentDTO } from '../models/CommentDTO.model';
 import { NewsDTO } from '../models/NewsDTO.model';
 import { AddNewsDTO } from '../models/AddNewsDTO.model';
-import { TeamsDTO } from '../models/AddTeamsDTO.model';
+import { TeamsDTO } from '../models/TeamsDTO.model';
+import { AddTeamsDTO } from '../models/AddTeamsDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -154,11 +155,28 @@ export class UserService {
     return this.http.delete<void>(`http://localhost:5291/api/News/delete-news/${id}`,{headers})
   }
 
-  addTeams(team:TeamsDTO):Observable<void>
+  addTeams(team:AddTeamsDTO):Observable<void>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
     return this.http.post<void>(`http://localhost:5291/api/Table/add-teams`,team,{headers})
+  }
+
+  getTeam(id:number):Observable<TeamsDTO>
+  {
+    return this.http.get<TeamsDTO>(`http://localhost:5291/api/Table/team/${id}`)
+  }
+
+  getAllTeams():Observable<TeamsDTO[]>
+  {
+    return this.http.get<TeamsDTO[]>(`http://localhost:5291/api/Table/all-teams`)
+  }
+
+  updateTeam(id:number,team:TeamsDTO):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.put<void>(`http://localhost:5291/api/Table/update-points/${id}`,team,{headers})
   }
 
   setToken(token: string): void {

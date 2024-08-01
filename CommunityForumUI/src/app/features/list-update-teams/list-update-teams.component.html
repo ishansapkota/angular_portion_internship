@@ -1,1 +1,15 @@
-<p>list-update-teams works!</p>
+<app-admin-dashboard></app-admin-dashboard>
+<div class="news-section">
+   
+      
+    <div class="news-articles">
+      <div class="news-article text-muted d-flex justify-content-between align-items-center" *ngFor="let team of teams">
+        <h3 class="news-title">{{team.teamname }}</h3>
+        
+        <div class="delete-button">
+          <a (click)="toUpdate(team.id)"><mat-icon>delete</mat-icon></a>
+          
+        </div>
+      </div>
+    </div>
+  </div>

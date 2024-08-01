@@ -1,4 +1,5 @@
-export interface TeamsDTO {
+export interface AddTeamsDTO 
+{
     teamname:string,
     points:number
 }

@@ -11,7 +11,7 @@
     
         <div class="mb-3 mt-3">
           <label for="exampleInputDescription" class="form-label">Post Description</label>
-          <input type="textarea" class="form-control" id="exampleInputDescription" aria-describedby="emailHelp" [(ngModel)]="post.postdescription" name="PostDescription">
+          <textarea class="form-control" id="exampleInputDescription" rows="3" [(ngModel)]="post.postdescription" name="PostDescription"> </textarea>
         </div>
     
         <button type="submit" class="btn btn-primary mb-3" *ngIf="service.isAuthenticated()">Post</button>

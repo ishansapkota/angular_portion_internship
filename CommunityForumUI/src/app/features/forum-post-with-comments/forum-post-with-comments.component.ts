@@ -48,6 +48,7 @@ export class ForumPostWithCommentsComponent {
             next:(comment)=>
             {
               this.comments = comment
+              console.log(this.comments)
             }
           }
         )

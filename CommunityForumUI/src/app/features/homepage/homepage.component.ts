@@ -5,6 +5,7 @@ import { UserService } from '../services/user-service.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NewsDTO } from '../models/NewsDTO.model';
+import { TeamsDTO } from '../models/TeamsDTO.model';
 
 @Component({
   selector: 'app-homepage',
@@ -16,6 +17,7 @@ import { NewsDTO } from '../models/NewsDTO.model';
 export class HomepageComponent {
   posts:PostFormatDTO[] = []
   news:NewsDTO[] = []
+  teams:TeamsDTO[]=[]
   constructor(public service:UserService)
   {
 
@@ -41,6 +43,17 @@ export class HomepageComponent {
           }
       }
     )
+
+    this.service.getAllTeams().subscribe(
+      {
+        next:(response)=>
+          {
+            this.teams=response
+          }
+      }
+    )
+
+
   }
 
   toPost(id:number)

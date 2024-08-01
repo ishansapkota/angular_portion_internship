@@ -1,11 +1,34 @@
 <app-navbar></app-navbar>
 
 <div class="home-container">
-    <div class="misc-info">
-      <p></p>
+  <div class="misc-info">
+    <h1>League Table</h1>
+    <p class="table-info">
+      <span ><strong>Team Name</strong></span>
+      <span><strong>Points</strong></span>
+    </p>
+    <div class="table-rows" *ngFor="let team of teams">
+      <div class="table-body">
+        <p class="team-info">
+          <span class="team-name">{{ team.teamname }}</span>
+          <span class="team-points">{{ team.points }}</span>
+        </p>
+      </div>
     </div>
+
+    <!-- <div class="news-articles">
+      <div class="news-article" *ngFor="let team of teams">
+        <p class="news-title">
+          <span class="team-name">{{ team.teamname }}</span>
+          <span class="team-points">{{ team.points }}</span>
+        </p>
+      </div>
+    </div> -->
+
+  </div>  
+  
     <div class="news-section">
-      <!-- <img src="../../../assets/photo.jpg" style="width: 50%;"> -->
+      
       <img src="assets/photo.jpg" alt="News Image" class="news-image"/>
   <div class="news-articles">
     <div class="news-article" *ngFor="let article of news">
@@ -15,12 +38,7 @@
 
     </div>
     </div>
- 
-    <!-- <div class="forum-section border border-dark">
-            <h1 class="community-forum" [routerLink]="['/forum/posts']">Community Forum</h1>
-      <div class="posts" *ngFor="let post of posts">
-      <a (click)="toPost(post.id)">{{post.posttitle}}</a>
-    </div> -->
+
     <div class="community-forum ">
       <h1 class="community-forum-header" [routerLink]="['/forum/posts']">Community Forum</h1>
       <div class="post-container" *ngFor="let post of posts" (click)="toPost(post.id)">
@@ -28,3 +46,39 @@
     </div>
     </div>
   </div>
+
+  <!-- <app-navbar></app-navbar>
+
+<div class="home-container">
+    <div class="misc-info">
+      <h1>League Table</h1>
+      <p class="table-info">
+        <span ><strong>Team Name</strong></span>
+        <span><strong>Points</strong></span>
+      </p>
+      <div class="table-rows" *ngFor="let team of teams">
+        <div class="table-body">
+          <p class="team-info">
+            <span class="team-name">{{ team.teamname }}</span>
+            <span class="team-points">{{ team.points }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="news-section">
+      <img src="assets/photo.jpg" alt="News Image" class="news-image"/>
+      <div class="news-articles">
+        <div class="news-article" *ngFor="let article of news">
+          <h3 class="news-title">{{ article.newstitle }}</h3>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="community-forum">
+      <h1 class="community-forum-header" [routerLink]="['/forum/posts']">Community Forum</h1>
+      <div class="post-container" *ngFor="let post of posts" (click)="toPost(post.id)">
+        <a class="post-title" style="text-decoration: none; color: black;">{{ post.posttitle }}</a>
+      </div>
+    </div>
+  </div> -->

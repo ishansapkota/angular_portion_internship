@@ -1,19 +1,19 @@
 <app-navbar></app-navbar>
-<div class="container border border-primary">
+<div class="container">
     
     <form #form="ngForm" (ngSubmit)="onRegister()">
     
         <div class="mb-3 mt-3">
-            <label for="exampleInputUserName1" class="form-label">Username</label>
+            <label for="exampleInputUserName1" class="form-label">USERNAME</label>
             <input type="text" class="form-control" id="exampleInputUserName1"  [(ngModel)]="model.username"  name="exampleInputUserName1">
           </div>
     
         <div class="mb-3 mt-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <label for="exampleInputEmail1" class="form-label">EMAIL ADDRESS</label>
           <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="model.email"  name="exampleInputEmail1">
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
           <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="model.password" name="exampleInputPassword1">
         </div>
     
@@ -21,5 +21,5 @@
         <button type="submit" class="btn btn-primary mb-3" >Register</button>
     
         
-      </form>
-    </div>
+    </form>
+  </div>

@@ -18,6 +18,7 @@ import { AddNewsComponent } from './features/add-news/add-news.component';
 import { ListDeleteNewsComponent } from './features/list-delete-news/list-delete-news.component';
 import { AddTeamsComponent } from './features/add-teams/add-teams.component';
 import { ListUpdateTeamsComponent } from './features/list-update-teams/list-update-teams.component';
+import { UpdateTeamsComponent } from './features/update-teams/update-teams.component';
 
 export const routes: Routes = [
     {
@@ -87,7 +88,12 @@ export const routes: Routes = [
     {
         path:'admin/list-teams',
         component:ListUpdateTeamsComponent
+    },
+    {
+        path:'admin/update-teams/:id',
+        component:UpdateTeamsComponent
     }
+
 
 
 ];

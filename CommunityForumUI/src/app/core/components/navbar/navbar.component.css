@@ -7,3 +7,18 @@
 .navbar.navbar-expand-lg a{
     color: #ffff;
 }
+
+.navbar-brand
+{
+    width: 150px;
+    height: 30px;
+}
+
+.dropdown-menu
+{
+    background-color: #113f67;
+}
+
+.dropdown-item:hover{
+    background-color: #1280e0;
+}
