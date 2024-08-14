@@ -4,11 +4,13 @@ import { UserService } from '../services/user-service.service';
 import { response } from 'express';
 import { NavbarComponent } from "../../core/components/navbar/navbar.component";
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [NavbarComponent,RouterModule],
+  imports: [NavbarComponent,RouterModule,FontAwesomeModule],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })

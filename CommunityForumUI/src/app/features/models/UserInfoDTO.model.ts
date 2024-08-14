@@ -7,5 +7,4 @@ export interface UserInformationDTO
     address:string,
     dob:string,
     email:string
-    
 }
