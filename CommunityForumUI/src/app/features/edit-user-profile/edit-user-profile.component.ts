@@ -6,6 +6,7 @@ import { Router } from 'express';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NavbarComponent } from "../../core/components/navbar/navbar.component";
 import { CommonModule } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-edit-user-profile',

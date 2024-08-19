@@ -15,6 +15,7 @@ import { NewsDTO } from '../models/NewsDTO.model';
 import { AddNewsDTO } from '../models/AddNewsDTO.model';
 import { TeamsDTO } from '../models/TeamsDTO.model';
 import { AddTeamsDTO } from '../models/AddTeamsDTO.model';
+import { ChangePasswordDTO } from '../models/ChangePasswordDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -102,6 +103,13 @@ export class UserService {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
     return this.http.put<void>(`http://localhost:5291/api/User`,model,{headers})
+  }
+
+  changePassword(pass:ChangePasswordDTO):Observable<void>
+  {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
+    return this.http.put<void>(`http://localhost:5291/api/User/change-password`,pass,{headers})
   }
 
   getPost(id:number):Observable<PostFormatDTO>

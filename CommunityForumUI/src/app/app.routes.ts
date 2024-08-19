@@ -19,6 +19,7 @@ import { ListDeleteNewsComponent } from './features/list-delete-news/list-delete
 import { AddTeamsComponent } from './features/add-teams/add-teams.component';
 import { ListUpdateTeamsComponent } from './features/list-update-teams/list-update-teams.component';
 import { UpdateTeamsComponent } from './features/update-teams/update-teams.component';
+import { ChangePasswordComponent } from './features/change-password/change-password.component';
 
 export const routes: Routes = [
     {
@@ -92,8 +93,9 @@ export const routes: Routes = [
     {
         path:'admin/update-teams/:id',
         component:UpdateTeamsComponent
+    },
+    {
+        path:'change-password',
+        component:ChangePasswordComponent
     }
-
-
-
 ];

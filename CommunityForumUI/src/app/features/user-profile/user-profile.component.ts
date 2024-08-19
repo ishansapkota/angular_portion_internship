@@ -5,12 +5,13 @@ import { response } from 'express';
 import { NavbarComponent } from "../../core/components/navbar/navbar.component";
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatIconModule} from '@angular/material/icon'
 
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [NavbarComponent,RouterModule,FontAwesomeModule],
+  imports: [NavbarComponent,RouterModule,FontAwesomeModule,MatIconModule],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })

@@ -27,13 +27,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
-1. Do countries need to worry about Cyber Terrorism? What can be the impact of cyber terrorism in  a society? Explain in detail.
-2. What do you mean by digital forensics? Explain different cybercrimes and ways to overcome. Put your own views.
-3. What do you mean by computer crime and digital forgery? Describe the current scenario and the effect of pornography on children and state the best approaches to reduce cybercrime in cyberspace in the context of Nepal.
-4. What do  you mean by digital forensic? Explain about digital forgery and Phising.
-5. Cyber Terrorism has been increasing with the advancement of technology. Express your view on it with the measures that can be taken to control this issue.
-6. What do you mean by Cyber-Crime and Digital forgery? Discuss your view on the current situation of online harrassment and measures to prevent it.
-7. Define the terms cyber crimes and digital forgery? Describe the current scenario and effect of online pornography on childrent and state the best approaches to reduce cyber crime in cyber space in the context of Nepal compared to the rest of the world.
-8. What do you mean by the digital forensics? Explain different cybercrimes. How would you prevent your computer from the crime? Discuss.
-9. What is phising? Mention the types of computer crimes.
-10. What are malicious programs? Describe the different types of such programs
+1. Define DSS. Differentiate between GDSS and DSS.(x2)
+2. How AI is useful in decision making? How knowledge based expert system is used decision making? (x5)
+3. Describe about business value of Decision support system. Differentiate between MIS & DSS.
+4. List and explain with example about the limitation of Intelligent System.
+5. What are DSS and GDSS? What are the tools used to process data from a warehouse? Discuss in brief.
+6. What are AI, Neural Network and virtual reality? Briefly explain your idea on role played by AI in improvement of virtual reality.
+7. What is data mining? What are its uses in web? Describe in brief about the types of web mining?
+8. Differentiate between OLAP and OLTP. What are the applications of Data Mining?(x3)
+9. What is Data Warehouse? Why do you require data warehouse along with operational databases? How is it related with data mining?
+10. Explain the knowledge management system life cycle.
+11. Define anomaly and fraud detection.
+12. Decision Support System (DSS) is the backbone of organization's decision making. Explain about DSS models.
+13. Why do we need data mining? Describe different steps of KDD process.
+14. Is decision making considered as a component of problem solving? Explain the characteristics of decision support system.
