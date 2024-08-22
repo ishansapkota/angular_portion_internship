@@ -10,5 +10,10 @@ div{
 }
 
 .card-header{
+    background-color: #1b3147; /*#323f4d */
+    color: #fff;
+    font-size: 1.25rem;
     font-weight: bold;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
 }

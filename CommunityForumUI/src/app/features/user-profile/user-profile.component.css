@@ -292,6 +292,11 @@ body {
   margin-top: 20px;
 }
 
+
+.dob{
+  color: black;
+}
+
 /* Responsive Design Adjustments */
 @media (max-width: 400px) {
   .card {

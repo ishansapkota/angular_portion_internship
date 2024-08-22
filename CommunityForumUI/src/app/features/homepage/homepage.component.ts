@@ -44,7 +44,7 @@ export class HomepageComponent {
       }
     )
 
-    this.service.getAllTeams().subscribe(
+    this.service.orderedTeam().subscribe(
       {
         next:(response)=>
           {

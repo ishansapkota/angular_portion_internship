@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<div class="container border border-dark mt-5">
+<!-- <div class="container border border-dark mt-5">
     
     <form #form="ngForm" (ngSubmit)="onPost()">
     
@@ -17,4 +17,50 @@
         <button type="submit" class="btn btn-primary mb-3" *ngIf="service.isAuthenticated()">Post</button>
         
       </form>
+    </div> -->
+
+    <div class="background">
+      <div class="container">
+        <div class="screen">
+          <div class="screen-header">
+            <div class="screen-header-left">
+              <div class="screen-header-button close"></div>
+              <div class="screen-header-button maximize"></div>
+              <div class="screen-header-button minimize"></div>
+            </div>
+            <div class="screen-header-right">
+              <div class="screen-header-ellipsis"></div>
+              <div class="screen-header-ellipsis"></div>
+              <div class="screen-header-ellipsis"></div>
+            </div>
+          </div>
+          <div class="screen-body">
+            <div class="screen-body-item left">
+              <div class="app-title">
+                <span>COMMUNITY POST</span>
+                <span>HERE</span>
+              </div>
+              
+            </div>
+            <div class="screen-body-item">
+              <div class="app-form">
+                <form #form="ngForm" (ngSubmit)="onPost()">
+                <div class="app-form-group">
+                  <input class="app-form-control" placeholder="POST TITLE" name="title" [(ngModel)]="post.posttitle">
+                </div>
+                <div class="app-form-group message">
+                  <input class="app-form-control" placeholder="POST DESCRIPTION" name="desc" [(ngModel)]="post.postdescription">
+                </div>
+                <div class="app-form-group buttons">
+                  <button class="app-form-button" (click)="toPost()">CANCEL</button>
+                  <button type="submit" class="app-form-button">SEND</button>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
     </div>
+    

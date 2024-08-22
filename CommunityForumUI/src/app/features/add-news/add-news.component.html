@@ -1,6 +1,6 @@
 <app-admin-dashboard></app-admin-dashboard>
 
-
+<!-- 
 <div class="card-container mt-5">
     <div class="card">
         <h1>Add News</h1>
@@ -19,6 +19,23 @@
             <button type="submit" class="btn btn-primary mb-3">Post</button>
             
           </form>
-        <!-- <a [routerLink]="['/admin/user-lists']" class="card-button">Go to User List</a> -->
+     
       </div>
+</div> -->
+
+<div class="container">
+  <div style="display:flex;width:100%;">
+      <form (ngSubmit)="onPost()">
+          <div style="width:100%;">
+              <p class="team-name">News Title</p>
+              <input name="name" autofocus [(ngModel)]="news.newstitle">
+          </div>
+          <div style="width:100%;">
+              <p class="team-points">News Description</p>
+              <input type="text" name="id" [(ngModel)]="news.newsdescription">
+          </div>
+
+          <button type="submit" class="btn btn-primary">ADD</button>
+      </form> 
+  </div>
 </div>

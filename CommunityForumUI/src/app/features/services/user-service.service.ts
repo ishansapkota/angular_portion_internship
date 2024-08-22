@@ -16,6 +16,7 @@ import { AddNewsDTO } from '../models/AddNewsDTO.model';
 import { TeamsDTO } from '../models/TeamsDTO.model';
 import { AddTeamsDTO } from '../models/AddTeamsDTO.model';
 import { ChangePasswordDTO } from '../models/ChangePasswordDTO.model';
+import { TableDTO } from '../models/TableDTO.model';
 
 @Injectable({
   providedIn: 'root'
@@ -170,9 +171,9 @@ export class UserService {
     return this.http.post<void>(`http://localhost:5291/api/Table/add-teams`,team,{headers})
   }
 
-  getTeam(id:number):Observable<TeamsDTO>
+  getTeam(id:number):Observable<TableDTO>
   {
-    return this.http.get<TeamsDTO>(`http://localhost:5291/api/Table/team/${id}`)
+    return this.http.get<TableDTO>(`http://localhost:5291/api/Table/team/${id}`)
   }
 
   getAllTeams():Observable<TeamsDTO[]>
@@ -180,11 +181,16 @@ export class UserService {
     return this.http.get<TeamsDTO[]>(`http://localhost:5291/api/Table/all-teams`)
   }
 
-  updateTeam(id:number,team:TeamsDTO):Observable<void>
+  updateTeam(id:number,team:TableDTO):Observable<void>
   {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`);
     return this.http.put<void>(`http://localhost:5291/api/Table/update-points/${id}`,team,{headers})
+  }
+
+  orderedTeam():Observable<TableDTO[]>
+  {
+    return this.http.get<TableDTO[]>(`http://localhost:5291/api/Table/order-teams`)
   }
 
   setToken(token: string): void {

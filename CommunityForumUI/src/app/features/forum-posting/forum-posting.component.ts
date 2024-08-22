@@ -38,4 +38,9 @@ onPost()
   }
   )
 }
+
+toPost()
+{
+  window.location.assign('/forum/posts')
+}
 }

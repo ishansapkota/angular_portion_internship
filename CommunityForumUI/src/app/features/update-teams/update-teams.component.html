@@ -1,17 +1,22 @@
-<!-- <app-admin-dashboard></app-admin-dashboard>
+<app-admin-dashboard></app-admin-dashboard>
 <div class="container">
     <div style="display:flex;width:100%;">
-        <form (ngSubmit)="onUpdate(team.id)">
+        <form #form="ngForm" (ngSubmit)="onUpdate(team.id)"> 
             <div style="width:100%;">
                 <p>Team Name</p>
-                <input name="name" autofocus [(ngModel)]="team.teamname">
+                <input type = "text" name="name" autofocus [(ngModel)]="team.teamname" >
             </div>
             <div style="width:100%;">
                 <p>Points</p>
                 <input type="number" name="id" [(ngModel)]="team.points">
             </div>
 
-            <button type="submit" class="btn btn-primary">ADD</button>
+            <div style="width:100%;">
+                <p>Goal Difference</p>
+                <input type="number" name="goalid" [(ngModel)]="team.goaldifference">
+            </div>
+
+            <button type="submit" class="btn btn-primary">UPDATE</button>
         </form> 
     </div>
-</div> -->
+</div>
