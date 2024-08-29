@@ -5,19 +5,30 @@
     
         <div class="mb-3 mt-3">
             <label for="exampleInputUserName1" class="form-label">USERNAME</label>
-            <input type="text" class="form-control" id="exampleInputUserName1"  [(ngModel)]="model.username"  name="exampleInputUserName1">
+            <input type="text" class="form-control" id="exampleInputUserName1" required [(ngModel)]="model.username"  name="username" #name="ngModel" >
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+              class="alert">
+            <div *ngIf="name.hasError('required')">
+              Username is required.
+            </div>
           </div>
+        </div>
+       
     
         <div class="mb-3 mt-3">
           <label for="exampleInputEmail1" class="form-label">EMAIL ADDRESS</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="model.email"  name="exampleInputEmail1">
+          <input type="email" class="form-control" id="exampleInputEmail1" required [(ngModel)]="model.email"  name="exampleInputEmail1" #email="ngModel">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+              class="alert">
+          <div *ngIf="email.hasError('required')">
+            Email is required.
+          </div>
+          </div>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
           <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="model.password" name="exampleInputPassword1">
         </div>
-    
-    
         <button type="submit" class="btn btn-primary mb-3" >Register</button>
     
         

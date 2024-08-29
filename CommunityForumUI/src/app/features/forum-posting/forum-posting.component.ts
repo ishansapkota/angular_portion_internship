@@ -20,7 +20,6 @@ export class ForumPostingComponent {
       postdescription :'',
       posttitle : ''
     }
-
   }
 onPost()
 {

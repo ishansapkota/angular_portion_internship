@@ -16,9 +16,7 @@ export class UserListsAdminComponent {
 
   constructor(private service:UserService)
   {
-
   }
-
   ngOnInit():void{
     this.service.getAllUsers().subscribe(
       {
@@ -31,6 +29,4 @@ export class UserListsAdminComponent {
     )
     
   }
-
-
 }

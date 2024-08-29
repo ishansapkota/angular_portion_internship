@@ -14,7 +14,11 @@ div{
     font-weight: bold;
 }
 
-.container:hover
+/* .container:hover
 {
     transform: scale(1.03);
+} */
+
+.alert{
+    color: red;
 }

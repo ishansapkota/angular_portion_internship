@@ -20,6 +20,7 @@ import { AddTeamsComponent } from './features/add-teams/add-teams.component';
 import { ListUpdateTeamsComponent } from './features/list-update-teams/list-update-teams.component';
 import { UpdateTeamsComponent } from './features/update-teams/update-teams.component';
 import { ChangePasswordComponent } from './features/change-password/change-password.component';
+import { authGuard } from './guard/auth.guard';
 
 export const routes: Routes = [
     {
@@ -60,7 +61,8 @@ export const routes: Routes = [
     },
     {
         path:'edit',
-        component:EditUserProfileComponent
+        component:EditUserProfileComponent,
+        
     },
     {
         path:'admin/user-lists',
